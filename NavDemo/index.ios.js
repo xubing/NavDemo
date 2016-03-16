@@ -11,14 +11,6 @@ import React, {
   View
 } from 'react-native';
 
-import App from './app';
+import DemoApp from './DemoApp';
 
-class NavDemo extends Component {
-  render() {
-    return (
-      <App number = {1}></App>
-    );
-  }
-}
-
-AppRegistry.registerComponent('NavDemo', () => NavDemo);
+AppRegistry.registerComponent('NavDemo', () => DemoApp);

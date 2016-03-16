@@ -16,35 +16,54 @@ import React, {
       <TouchableHighlight
         style={styles.button}
         underlayColor="#B5B5B5"
-        onPress={this.props.onPress}>
-        <Text style={styles.buttonText}>{this.props.text}</Text>
+        onPress= {this.props.onPress}>
+        <Text style={styles.buttonText}> {this.props.text}</Text>
       </TouchableHighlight>
     );
   }
 }
 
-export default  class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        
-        <NavButton text ={`clickme ${this.props.number+1}`} 
-        onPress={() => {
-            this.props.navigator.push({
-              message: 'Swipe right to dismiss',
-              sceneConfig: Navigator.SceneConfigs.FloatFromRight,
-            });
-          }}
-        />
-        
-        <Text style={styles.welcome}>
-          {this.props.number}
-        </Text>       
-      </View>
-    );
-  }
-}
 
+
+
+export default  class App extends Component {
+
+  onForward()
+  {
+     console.log('index')
+     console.log(this.props)
+     var nextIndex = this.props.index + 1;
+     console.log('nextIndex',nextIndex)
+
+     this.props.navigator.push({
+       id:  nextIndex,
+       index: nextIndex,
+     });
+
+ }
+
+ // onBack={() => {
+ //   if (this.props.route.index > 0) {
+ //     this.props.navigator.pop();
+ //   }
+ // }}
+
+   render() {
+    console.log('this.props',this.props)
+    return(
+         <View style={styles.container}>
+           <NavButton 
+           text ={`clickme to page: ${this.props.index+1}`}
+           onPress = {this.onForward.bind(this)}
+            >
+           </NavButton>
+          <Text style={styles.welcome}>
+            {this.props.index}
+            </Text> 
+         </View>
+      );
+   }
+}
 
 
 const styles = StyleSheet.create({
