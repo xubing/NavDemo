@@ -37,7 +37,7 @@ export default  class App extends Component {
 
      this.props.navigator.push({
        id:  nextIndex,
-       index: nextIndex,
+       index: nextIndex       
      });
 
  }
@@ -53,14 +53,16 @@ export default  class App extends Component {
     return(
          <View style={styles.container}>
            <NavButton 
-           text ={`clickme to page: ${this.props.index+1}`}
+           text = {`clickme to page: ${this.props.index+1}`}
            onPress = {this.onForward.bind(this)}
             >
            </NavButton>
+
           <Text style={styles.welcome}>
             {this.props.index}
             </Text> 
          </View>
+
       );
    }
 }

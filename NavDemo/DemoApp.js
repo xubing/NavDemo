@@ -4,17 +4,13 @@
  */
 'use strict';
 import React, {
-  AppRegistry,
   Component,
-  StyleSheet,
-  Text,
-  View,
   Navigator
 } from 'react-native';
 
 import App from './app';
 
-//想实现点击App组件中的按钮，跳到新的App组件中。熟悉下Navigator的用法。
+//想法: 实现点击App组件中的按钮，跳到新的App组件中。熟悉Navigator的用法。
 
 export default class DemoApp extends Component {
   
@@ -24,7 +20,7 @@ export default class DemoApp extends Component {
        <App name= {'App'} index ={route.id} navigator= {navigator} />
       );  
   }
-  
+
   configureScene(route)
   {
     console.log('route',route)
