@@ -15,8 +15,8 @@ import App from './app';
 export default class DemoApp extends Component {
   
   renderScene(route, navigator) {
-    console.log('route.id',route.id) 
-    return (
+    console.log('route.id',route.id)     
+    return (              
        <App name= {'App'} index ={route.id} navigator= {navigator} />
       );  
   }
@@ -26,8 +26,9 @@ export default class DemoApp extends Component {
     console.log('route',route)
     if (route.sceneConfig) {
        return route.sceneConfig;
-     }              
-    return Navigator.SceneConfigs.FadeToTheRight;
+     }            
+      //FadeToTheRight 将会有错误。不知道
+    return  Navigator.SceneConfigs.FloatFromRight;
   }
 
   render() {
