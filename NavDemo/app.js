@@ -60,7 +60,7 @@ export default  class App extends Component {
            </NavButton>
 
           <Text style={styles.welcome}>
-            {this.props.index}
+            {`Current:${this.props.index}`}
             </Text> 
           <NavButton 
            text = {'Back'}
