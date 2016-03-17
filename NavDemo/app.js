@@ -40,20 +40,21 @@ export default  class App extends Component {
        index: nextIndex       
      });
 
- }
+ };
 
- // onBack={() => {
- //   if (this.props.route.index > 0) {
- //     this.props.navigator.pop();
- //   }
- // }}
+ onBack = () => {
+   var nextIndex = this.props.index + 1;
+   if (nextIndex > 0) {
+     this.props.navigator.pop();
+   }
+ };
 
    render() {
     console.log('this.props',this.props)
     return(
          <View style={styles.container}>
            <NavButton 
-           text = {`clickme to page: ${this.props.index+1}`}
+           text = {`To page: ${this.props.index+1}`}
            onPress = {this.onForward.bind(this)}
             >
            </NavButton>
@@ -61,6 +62,11 @@ export default  class App extends Component {
           <Text style={styles.welcome}>
             {this.props.index}
             </Text> 
+          <NavButton 
+           text = {'Back'}
+           onPress = {this.onBack}
+            />
+
          </View>
 
       );
