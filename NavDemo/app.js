@@ -43,11 +43,15 @@ export default  class App extends Component {
  };
 
  onBack = () => {
-   var nextIndex = this.props.index + 1;
+   var nextIndex = this.props.index;
    if (nextIndex > 0) {
      this.props.navigator.pop();
    }
  };
+  onFirst = () => {   
+     this.props.navigator.popToTop();
+   };
+
 
    render() {
     console.log('this.props',this.props)
@@ -65,6 +69,10 @@ export default  class App extends Component {
           <NavButton 
            text = {'Back'}
            onPress = {this.onBack}
+            />
+          <NavButton 
+           text = {'FirstPage'}
+           onPress = {this.onFirst}
             />
 
          </View>
