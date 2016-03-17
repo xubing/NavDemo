@@ -34,8 +34,8 @@ export default class DemoApp extends Component {
     return (
       <Navigator
       initialRoute={{ index: 1,id:1}}
-      configureScene={this.configureScene}              
-      renderScene= {this.renderScene} >
+      configureScene={this.configureScene.bind(this)}              
+      renderScene= {this.renderScene.bind(this)} >
       </Navigator>
     );
   }
