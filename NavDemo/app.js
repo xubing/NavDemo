@@ -24,8 +24,6 @@ import React, {
 }
 
 
-
-
 export default  class App extends Component {
 
   onForward()

@@ -28,7 +28,10 @@ export default class DemoApp extends Component {
        return route.sceneConfig;
      }            
       //FadeToTheRight 将会有错误。不知道
-    return  Navigator.SceneConfigs.FloatFromRight;
+
+    let navCfg =  Navigator.SceneConfigs.FloatFromRight;
+    navCfg.defaultTransitionVelocity = 10  //修改切换的速度 😄
+    return  navCfg;    
   }
 
   render() {
